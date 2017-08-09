@@ -125,7 +125,30 @@ public class Janela extends javax.swing.JDialog {
     }//GEN-LAST:event_textEntradaActionPerformed
 
     private void converterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_converterActionPerformed
-        // TODO add your handling code here:
+
+        if (boxEntrada.getSelectedIndex() == 1
+                && boxSaida.getSelectedIndex() == 0) {
+            int valor = Integer.parseInt(textEntrada.getText());
+            String saida = "";
+
+            while (valor >= 1) {
+                int r = valor % 2;
+                saida = r + saida;
+                valor /= 2;
+            }
+            textSaida.setText(saida);
+        }
+        if (boxEntrada.getSelectedIndex() == 0
+                && boxSaida.getSelectedIndex() == 1) {
+            String entrada = textEntrada.getText();
+            int s = 0;
+
+            for (int i = 0; i < entrada.length(); i++) {
+                int v = Character.getNumericValue(entrada.charAt(i));
+                s += v * Math.pow(2, entrada.length() - 1 - i);
+            }
+            textSaida.setText( String.valueOf(s) );
+        }
     }//GEN-LAST:event_converterActionPerformed
 
     /**
