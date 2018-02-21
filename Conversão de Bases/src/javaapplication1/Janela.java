@@ -126,29 +126,38 @@ public class Janela extends javax.swing.JDialog {
 
     private void converterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_converterActionPerformed
 
-        if (boxEntrada.getSelectedIndex() == 1
-                && boxSaida.getSelectedIndex() == 0) {
-            int valor = Integer.parseInt(textEntrada.getText());
-            String saida = "";
+        //BINÁRIO -> DECIMAL 
+        if (boxEntrada.getSelectedIndex() == 0 && boxSaida.getSelectedIndex() == 1) {
 
-            while (valor >= 1) {
-                int r = valor % 2;
-                saida = r + saida;
-                valor /= 2;
-            }
-            textSaida.setText(saida);
         }
-        if (boxEntrada.getSelectedIndex() == 0
-                && boxSaida.getSelectedIndex() == 1) {
-            String entrada = textEntrada.getText();
-            int s = 0;
 
-            for (int i = 0; i < entrada.length(); i++) {
-                int v = Character.getNumericValue(entrada.charAt(i));
-                s += v * Math.pow(2, entrada.length() - 1 - i);
-            }
-            textSaida.setText( String.valueOf(s) );
+        //BINÁRIO -> HEXADECIMAL 
+        if (boxEntrada.getSelectedIndex() == 0 && boxSaida.getSelectedIndex() == 2) {
+
         }
+
+        //DECIMAL -> BINÁRIO
+        if (boxEntrada.getSelectedIndex() == 1 && boxSaida.getSelectedIndex() == 0) {
+
+        }
+
+        //DECIMAL -> HEXADECIMAL 
+        if (boxEntrada.getSelectedIndex() == 1 && boxSaida.getSelectedIndex() == 2) {
+
+        }
+
+        //HEXADECIMAL -> BINÁRIO
+        if (boxEntrada.getSelectedIndex() == 2 && boxSaida.getSelectedIndex() == 0) {
+
+        }
+
+        //HEXADECIMAL -> DECIMAL
+        if (boxEntrada.getSelectedIndex() == 2 && boxSaida.getSelectedIndex() == 1) {
+
+        }
+
+        textEntrada.setText("OK!");
+        textSaida.setText("OK!");
     }//GEN-LAST:event_converterActionPerformed
 
     /**
